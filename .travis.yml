@@ -1,0 +1,13 @@
+language: php
+php:
+    - 5.5
+    - 5.6
+    - 7
+install:
+    - composer install --no-interaction
+script:
+    - phpunit --debug --verbose
+notifications:
+    email: false
+    slack:
+        secure: V/GiepkgvaRjOje0ljOD/MwvaeLs41XlUBqUXwQFukYZdRyOP8PizZLnZs8vNUVoagflU4PCeS/MW0C8f76O4vWZk8cbIG6T2W57E5nns/x7ysgeDLS9OYTBMvKVDSpF5SUsw1sR7G8WIGhSX2zbd08PLlR7J1dOKsfrfQtdeKBR6T0NmRm23JSYlFLcs6eZxYCxVnNXNTD/G8VEQbSjql/+V26dz72dOgjDdnusfvwGIi9l9iVwwwNfKl4pheA8KwllFALv50ORi0yJY3YLaQLIhcCoUmzYhmYRgatmH1DW18+WOguiHroqL9/Q1eJTXkQVvee3ThnscB9VpiR9MYS3l9Gzfb22c58aMmRNVyNj4BkYDJ3if4nmu3qvk0yQN9U8IpBroV5MeWTkCH0yA3EfgWV5dGXl/rX4En3HywCNw6lilpr4DiNgRWXkmfW/rbmzUUyx06jPAODsCw9s++EidHYNGOnw52YRg6G/4rEYcBS3nJpnE0R0zYxPmE8MycT3vXrvomaminBXLpxzjm46quYrxRiS66TApj8LLl/eteetM60nnSSHrhlBkOcBJ+m3MeLNJUhp+SvjFlRzhjxnMutN1T4B8GSiXyUh2bRiGxgl236EpaKcOa8JvmFul8hxLp3NCCOP0wZ4kOqqxcv38gnkQ7ahVz4YiaPuZF8=
