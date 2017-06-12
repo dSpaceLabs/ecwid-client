@@ -1,0 +1,37 @@
+{
+    "name": "dspacelabs/ecwid",
+    "description": "Ecwid PHP Client",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/dSpaceLabs/Ecwid",
+    "authors": [
+        {
+            "name": "Joshua Estes",
+            "homepage": "http://joshuaestes.me"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dSpaceLabs/Exwid/issues",
+        "source": "https://github.com/dSpaceLabs/Ecwid",
+        "docs": "https://github.com/dSpaceLabs/Ecwid"
+    },
+    "require": {
+        "ext-curl": "*"
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "mockery/mockery": "*"
+    },
+    "autoload": {
+        "psr-4": { "Dspacelabs\\Component\\Ecwid\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Dspacelabs\\Component\\Ecwid\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+}
