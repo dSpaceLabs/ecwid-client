@@ -13,12 +13,12 @@
         </whitelist>
     </filter>
 
-    <logging>
-        <log type="coverage-html" target="docs/coverage" />
-        <log type="coverage-clover" target="logs/clover.xml"/>
-    </logging>
+    <!--<logging>-->
+    <!--    <log type="coverage-html" target="docs/coverage" />-->
+    <!--    <log type="coverage-clover" target="logs/clover.xml"/>-->
+    <!--</logging>-->
 
-    <listeners>
-        <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>
-    </listeners>
+    <!--<listeners>-->
+    <!--    <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>-->
+    <!--</listeners>-->
 </phpunit>
