@@ -27,4 +27,8 @@ $client = new Client($clientId, $clientSecret);
 
 ## Change Log
 
+See [CHANGELOG.md](https://github.com/dSpaceLabs/Ecwid/blob/master/CHANGELOG.md)
+
 ## License
+
+See [LICENSE](https://raw.githubusercontent.com/dSpaceLabs/Ecwid/master/LICENSE)
