@@ -27,11 +27,11 @@ class Client
      * @param string $id
      * @param string $secret
      */
-    public function __construct($id, $secret)
+    public function __construct($clientId, $clientSecret)
     {
-        $this->id     = $id;
-        $this->secret = $secret;
-        $this->scopes = array();
+        $this->clientId     = $clientId;
+        $this->clientSecret = $clientSecret;
+        $this->scopes       = array();
     }
 
     /**
@@ -40,5 +40,29 @@ class Client
     protected function getBaseAPIUri()
     {
         return 'https://my.ecwid.com/api';
+    }
+
+    /**
+     * @param string $code
+     * @param string $redirectUri
+     */
+    public function getAccessToken($code, $redirectUri)
+    {
+        $url = sprintf(
+            '%s/oauth/token?client_id=%s&client_secret=%s&code=%s&redirect_uri=%s&grant_type=authorization_code',
+            $this->getBaseAPIUri(),
+            $this->clientId,
+            $this->clientSecret,
+            $code,
+            $redirectUri
+        );
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($response);
+        die();
     }
 }
