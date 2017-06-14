@@ -62,7 +62,6 @@ class Client
         $response = curl_exec($ch);
         curl_close($ch);
 
-        var_dump($response);
-        die();
+        return $response;
     }
 }
