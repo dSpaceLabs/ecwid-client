@@ -56,7 +56,6 @@ class Client
             $code,
             urlencode($redirectUri)
         );
-        var_dump($url);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
