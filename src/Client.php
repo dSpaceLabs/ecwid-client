@@ -54,7 +54,7 @@ class Client
             $this->clientId,
             $this->clientSecret,
             $code,
-            $redirectUri
+            urlencode($redirectUri)
         );
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, true);
