@@ -20,8 +20,8 @@
         "dspacelabs/http-message": "^0.1@dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "mockery/mockery": "*"
+        "mockery/mockery": "^0.9.9",
+        "phpunit/phpunit": "^6.2"
     },
     "autoload": {
         "psr-4": { "Dspacelabs\\Component\\Ecwid\\": "src/" }
