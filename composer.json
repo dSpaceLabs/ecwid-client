@@ -1,5 +1,5 @@
 {
-    "name": "dspacelabs/ecwid",
+    "name": "dspacelabs/ecwid-client",
     "description": "Ecwid PHP Client",
     "type": "library",
     "license": "MIT",
