@@ -16,7 +16,8 @@
         "docs": "https://github.com/dSpaceLabs/Ecwid"
     },
     "require": {
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "dspacelabs/http-message": "^0.1@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
