@@ -12,7 +12,7 @@ API.
 ## Installation
 
 ```bash
-composer require "dspacelabs/ecwid:~0.1@dev"
+composer require "dspacelabs/ecwid-client:~0.1@dev"
 ```
 
 ## Usage
