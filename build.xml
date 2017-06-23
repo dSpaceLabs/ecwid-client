@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dspacelabs/ecwid-client" default="phpunit">
+    <target name="phpunit">
+        <exec executable="${project.basedir}/vendor/bin/phpunit" passthru="true" output="/dev/stdout" error="/dev/stderr" logoutput="/dev/stdout" level="debug" checkreturn="true">
+            <arg value="--verbose" />
+        </exec>
+    </target>
+
+    <target name="phpunit-coverage">
+        <mkdir dir="${project.basedir}/docs/coverage" />
+        <exec executable="${project.basedir}/vendor/bin/phpunit" passthru="true" output="/dev/stdout" error="/dev/stderr" logoutput="/dev/stdout" level="debug" checkreturn="true">
+            <arg value="--verbose" />
+            <arg value="--coverage-html" />
+            <arg path="${project.basedir}/docs/coverage" />
+        </exec>
+    </target>
+</project>

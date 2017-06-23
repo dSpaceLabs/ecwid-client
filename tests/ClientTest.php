@@ -4,7 +4,7 @@ namespace Dspacelabs\Component\Ecwid\Tests;
 
 use Dspacelabs\Component\Ecwid\Client;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstruct()
     {
