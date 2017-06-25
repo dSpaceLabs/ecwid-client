@@ -43,6 +43,22 @@ $response = $client->getAccessToken('temp_code', $redirectUri);
 $accessToken = $response['access_token'];
 ```
 
+### Sending Raw Requests
+
+If you need to send a raw request and get a raw response you have access to do
+so. For example:
+
+```php
+// @var \Dspacelabs\Component\Http\Message\Request  $request
+// @var \Dspacelabs\Component\Http\Message\Response $response
+$response = $client->sendWithRequest($request);
+```
+
+The Request object MUST be PSR-7 compliant and the Response object that this
+client returns is PSR-7 compliant.
+
+Sending raw requests provides the greatest flexibility, but is very low level.
+
 ## Change Log
 
 See [CHANGELOG.md](https://github.com/dSpaceLabs/Ecwid/blob/master/CHANGELOG.md)
