@@ -1,4 +1,4 @@
-Ecwid PHP Client
+Ecwid PHP Client [![Build Status](https://travis-ci.org/dSpaceLabs/ecwid-client.svg?branch=master)](https://travis-ci.org/dSpaceLabs/ecwid-client)
 ================
 
 [Ecwid](https://www.ecwid.com/) PHP Client used for interacting with Ecwid's
