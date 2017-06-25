@@ -1,0 +1,8 @@
+{
+    "access_token":"secure_123453lasdADSKasasdjasdklasASkmns",
+    "token_type":"bearer",
+    "scope":"read_store_profile update_catalog",
+    "store_id":1003,
+    "email": "john@store.com",
+    "public_token":"public_qKDUqKkNXzcj9DejkMUqEkYLq2E6BXM9"
+}

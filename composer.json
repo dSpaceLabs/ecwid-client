@@ -16,7 +16,6 @@
         "docs": "https://github.com/dSpaceLabs/Ecwid"
     },
     "require": {
-        "ext-curl": "*",
         "dspacelabs/http-client": "^0.1"
     },
     "require-dev": {

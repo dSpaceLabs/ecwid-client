@@ -4,64 +4,81 @@
 
 namespace Dspacelabs\Component\Ecwid;
 
+use Dspacelabs\Component\Http\Client\Client as BaseClient;
+use Dspacelabs\Component\Http\Message\Uri;
+use Dspacelabs\Component\Http\Message\Request;
+
 /**
  * Ecwid Client
  */
-class Client
+class Client extends BaseClient
 {
     /**
      * Client ID
      *
-     * @param string
+     * @var string
      */
     protected $clientId;
 
     /**
      * Client Secret
      *
-     * @param string
+     * @var string
      */
     protected $clientSecret;
+
+    /**
+     * Store ID
+     *
+     * @var string
+     */
+    protected $storeId;
 
     /**
      * @param string $id
      * @param string $secret
      */
-    public function __construct($clientId, $clientSecret)
+    public function __construct($clientId, $clientSecret, $storeId = '')
     {
         $this->clientId     = $clientId;
         $this->clientSecret = $clientSecret;
-        $this->scopes       = array();
+        $this->storeId      = $storeId;
     }
 
     /**
-     * @return string
+     * Set the Store ID you are working with
+     *
+     * @param string $storeId
+     * @return self
      */
-    protected function getBaseAPIUri()
+    public function setStoreId($storeId)
     {
-        return 'https://my.ecwid.com/api';
+        $this->storeId = $storeId;
+
+        return $this;
     }
 
     /**
      * @param string $code
-     * @param string $redirectUri
+     * @param \Psr\Http\Message\UriInterface $redirectUri
      */
-    public function getAccessToken($code, $redirectUri)
+    public function getAccessToken($code, \Psr\Http\Message\UriInterface $redirectUri)
     {
-        $url = sprintf(
-            '%s/oauth/token?client_id=%s&client_secret=%s&code=%s&redirect_uri=%s&grant_type=authorization_code',
-            $this->getBaseAPIUri(),
-            $this->clientId,
-            $this->clientSecret,
-            $code,
-            urlencode($redirectUri)
-        );
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
+        $uri = (new Uri('https://my.ecwid.com/api/oauth/token'))
+            ->withQuery(
+                http_build_query(
+                    array(
+                        'client_id'     => $this->clientId,
+                        'client_secret' => $this->clientSecret,
+                        'code'          => $code,
+                        'redirect_uri'  => $redirectUri,
+                        'grant_type'    => 'authorization_code',
+                    )
+                )
+            );
+        $request = (new Request())->withMethod('POST')->withUri($uri);
+        $response = $this->sendWithRequest($request);
 
-        return $response;
+        return json_decode($response->getBody()->getContents(), true);
     }
 }
