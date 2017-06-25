@@ -9,6 +9,8 @@ API.
 * PHP cURL Extension
 * PHP >= 5.6
 * [dspacelabs/http-client](https://github.com/dSpaceLabs/http-client)
+* [dspacelabs/http-message](https://github.com/dSpaceLabs/http-message)
+  * Or any other PSR-7 compliant library
 
 ## Installation
 
@@ -32,8 +34,12 @@ $client = new Client($clientId, $clientSecret);
 Reference: https://developers.ecwid.com/api-documentation/external-applications
 
 ```php
+use Dspacelabs\Component\Http\Message\Uri;
+
+$redirectUri = new Uri('https://www.example.com/myapp');
+
 // @var array $response
-$response = $client->getAccessToken('temp_code', $uri);
+$response = $client->getAccessToken('temp_code', $redirectUri);
 $accessToken = $response['access_token'];
 ```
 
