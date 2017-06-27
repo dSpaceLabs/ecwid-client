@@ -85,8 +85,6 @@ class Client extends BaseClient
             //throw new \RuntimeException('There was an error with the request');
         }
 
-        return $response;
-
         return $data;
     }
 }
