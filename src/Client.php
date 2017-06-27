@@ -83,7 +83,7 @@ class Client extends BaseClient
         var_dump($response, $contents);
         $data     = json_decode($contents, true);
         if (!$data) {
-            throw new \RuntimeException('There was an error with the request');
+            //throw new \RuntimeException('There was an error with the request');
         }
 
         return $data;
