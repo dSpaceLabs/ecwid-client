@@ -80,7 +80,11 @@ class Client extends BaseClient
         $request  = (new Request())->withMethod('POST')->withUri($uri);
         $response = $this->sendWithRequest($request);
         $contents = $response->getBody()->getContents();
+        $data = json_decode($contents, true);
+        if (!$data) {
+            throw new \RuntimeException('There was an error with the request');
+        }
 
-        return json_decode($contents, true);
+        return $data;
     }
 }
