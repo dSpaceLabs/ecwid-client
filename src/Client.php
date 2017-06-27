@@ -61,6 +61,7 @@ class Client extends BaseClient
     /**
      * @param string $code
      * @param \Psr\Http\Message\UriInterface $redirectUri
+     * @return array
      */
     public function getAccessToken($code, \Psr\Http\Message\UriInterface $redirectUri)
     {
