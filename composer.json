@@ -16,7 +16,7 @@
         "docs": "https://github.com/dSpaceLabs/Ecwid"
     },
     "require": {
-        "dspacelabs/http-client": "^0.1"
+        "dspacelabs/http-client": "^0.1@dev"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
