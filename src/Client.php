@@ -78,7 +78,6 @@ class Client extends BaseClient
             );
         $request  = (new Request())->withMethod('POST')->withUri($uri);
         $response = $this->sendWithRequest($request);
-        return $response;
 
         return json_decode($response->getBody()->getContents(), true);
     }
