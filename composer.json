@@ -16,7 +16,9 @@
         "docs": "https://github.com/dSpaceLabs/Ecwid"
     },
     "require": {
-        "dspacelabs/http-client": "dev-master"
+        "dspacelabs/http-client": "dev-master",
+        "guzzlehttp/guzzle": "^6.0",
+        "psr/log": "^1.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
